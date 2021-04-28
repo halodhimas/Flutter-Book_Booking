@@ -92,9 +92,119 @@ class _NavigationPageState extends State<NavigationPage> {
             //bottom slider
             Align(
               alignment: Alignment.bottomCenter,
-              child: CustomPaint(
-                size: Size.fromHeight(240),
-                painter: BottomSlider(),
+              child: Container(
+                height: 263,
+                width: double.infinity,
+                child: Stack(
+                  children: [
+                    CustomPaint(
+                      painter: BottomSlider(),
+                      size: Size(double.infinity, 275),
+                    ),
+                    Container(
+                      child: Row(
+                        children: [
+                          //book
+                          Container(
+                              margin: EdgeInsets.only(
+                                  top: 60, left: 30, right: 30, bottom: 30),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                      width: 95,
+                                      child: Image(
+                                          image: AssetImage(
+                                              'assets/img/book.png'))),
+                                  SizedBox(
+                                    width: 25,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text('Design Thinking',
+                                          style: TextStyle(
+                                            fontFamily: "modern",
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w700,
+                                          )),
+                                      SizedBox(height: 15),
+                                      Row(
+                                        children: [
+                                          SvgPicture.asset(locationIcon),
+                                          SizedBox(width: 12),
+                                          Text('Per. Cempaka Indah No 57.',
+                                              style: TextStyle(
+                                                fontFamily: "modern",
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w500,
+                                              )),
+                                        ],
+                                      ),
+                                      SizedBox(height: 15),
+                                      Row(
+                                        children: [
+                                          SvgPicture.asset(statusIcon),
+                                          SizedBox(width: 12),
+                                          Text('Buku Sedang Diantar...',
+                                              style: TextStyle(
+                                                fontFamily: "modern",
+                                                color: Color(0xFFBEBEBE),
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w500,
+                                              )),
+                                        ],
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              )),
+                        ],
+                      ),
+                    ),
+                    //Button
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        margin: EdgeInsets.all(30),
+                        padding: EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                            color: orangePrimary,
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Rp 5.000',
+                              style: TextStyle(
+                                  fontFamily: 'modern',
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            Spacer(),
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              child: SvgPicture.asset(nextIcon),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 15),
+                        child: SvgPicture.asset(slider),
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
